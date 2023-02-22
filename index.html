@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Discover</title>
+    <link rel="shortcut icon" href="./assets/picture/webpage-img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="wrap">
+        <audio src="./assets/music/theswan.mp3"></audio>
+        <!-- Nav -->
+        <div class="nav-bar">
+            <div class="nav-btn-container">
+                <div class="soundcloud-icon"></div>
+                <div class="nav-btn">Home</div>
+                <div class="nav-btn">Feed</div>
+                <div class="nav-btn">Library</div>
+                <form class="search-bar-container">
+                    <input type="text" placeholder="Search" pattern="hehe">
+                    <button id="search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <div class="right-container">
+                    <div class="try-next-pro">Try Next Pro</div>
+                    <div class="upload">Upload</div>
+                    <div class="user-info-container">
+                        <div class="avatar"></div>
+                        <div class="username">P34r</div>
+                        <div class="down-key">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="icon"><i class="fa-solid fa-user"></i></div>Profile
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa-solid fa-heart"></i></div>Likes
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa-solid fa-squarespace"></i></div>Playlists
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa-solid fa-podcast"></i></div>Stations
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa-solid fa-user-group"></i></div>Following
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa-solid fa-star"></i></div>Try next pro
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa-solid fa-water"></i></div>Tracks
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fa-solid fa-arrows-to-circle"></i></div>Distribute
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="extra-btn announcement-modal"><i class="fa-solid fa-bell"></i></div>
+                    <div class="extra-btn message-modal"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="extra-btn menu-modal"><i class="fa-solid fa-ellipsis"></i>
+                        <ul>
+                            <li>About us</li>
+                            <li>Legal</li>
+                            <li>Copyright</li>
+                            <li>Mobile apps</li>
+                            <li>For Creator</li>
+                            <li>Blog</li>
+                            <li>Jobs</li>
+                            <li>Developers</li>
+                            <li>Supports</li>
+                            <li>Keyboard shortcuts</li>
+                            <li>Subscription</li>
+                            <li>Settings</li>
+                            <li>Sign out</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Control Song -->
+        <div class="playControls">
+            <div class="control-button-container">
+                <div class="control-button prev-btn"><i class="fa-solid fa-backward-step"></i></div>
+                <div class="control-button play-button">
+                    <i class="fa-solid fa-play icon-play"></i>
+                    <i class="fa-solid fa-pause icon-pause"></i>
+                </div>
+                <div class="control-button next-btn"><i class="fa-solid fa-forward-step"></i></div>
+                <div class="control-button shuffle-btn"><i class="fa-solid fa-shuffle"></i></div>
+                <div class="control-button repeat-btn"><i class="fa-sharp fa-solid fa-repeat"></i></div>
+            </div>
+            <div class="control-time-of-song">
+                <div class="time current-time">
+                    <div class="minute">0</div>
+                    <div>:</div>
+                    <div class="second">00</div>
+                </div>
+                <div class="container">
+                    <input type="range" id="my-slider" min="0" max="100" value="0" step="0.5">
+                </div>
+                <div class="time total-time">
+                    <div class="minute">0</div>
+                    <div>:</div>
+                    <div class="second">00</div>
+                </div>
+            </div>
+            <div class="control-volume">
+                <i class="fa-solid fa-volume-high"></i>
+                <!-- Volume modal -->
+                <div class="vertical">
+                    <input type="range" id="volume-slider" min="0" max="100" value="100" step="0.5">
+                </div>
+            </div>
+            <div class="control-song-info">
+                <div class="song-img">
+                </div>
+                <div class="author-and-songname">
+                    <div class="song-author"></div>
+                    <div class="song-name"></div>
+                </div>
+                <div onclick="notAvailableFeature()" class="extra-of-song like"><i class="fa-solid fa-heart"></i></div>
+                <div onclick="notAvailableFeature()" class="extra-of-song follow"><i class="fa-solid fa-user-plus"></i>
+                </div>
+                <div class="extra-of-song playlist"><i class="fa-solid fa-list"></i></div>
+            </div>
+
+            <!-- Playlist modal -->
+
+            <div class="playlist-modal close">
+                <div class="control-playlist-bar">
+                    <div class="next-up">
+                        <h4 style="font-weight: 500;letter-spacing: 1px;">Next up</h4>
+                    </div>
+                    <div class="close-icon">
+                        <i class="fa-solid fa-xmark" style="font-size: 24px;opacity: 0.6;"></i>
+                    </div>
+                </div>
+                <div class="playlist-container">
+                    <div class="song-container">
+                        <div class="song-img" style="background-image: url('');">
+                        </div>
+                        <div class="author-and-songname">
+                            <div class="song-author"></div>
+                            <div class="song-name"></div>
+                        </div>
+                        <div class="song-time">4:25</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Content -->
+        <div id="content">
+            <div class="content-container">
+                <div class="feed-main">
+                    <div class="mowyl-container">
+                        <div class="mowyl-title">More of what you like</div>
+                        <div class="mowyl-song-container">
+                            <div class="mowyl-hide-song">
+                                <div class="mowyl-song-item">
+                                    <div class="mowyl-song-img"
+                                        style="background-image: url('./assets/picture/song-img/anhdaucohay.jpg');">
+                                        <div class="mowyl-half-below">
+                                            <div class="mowyl-other-button">
+                                                <i class="fa-solid fa-heart"></i>
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </div>
+                                        </div>
+                                        <div class="mowyl-play-button">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mowyl-song-name">an ha kieu - tong dong da</div>
+                                    <div class="mowyl-song-author">Related tracks</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scw-container">
+                        <div class="scw-title">SoundCloud Weekly</div>
+                        <div class="scw-song-container">
+                            <div class="scw-song-container-wrapper">
+                                <div class="scw-container-img">
+                                    <div class="scw-play-button">
+                                        <i class="fa-solid fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="scw-song-item-wrapper">
+                                    <div class="scw-song-item">
+                                        <div class="scw-other-button">
+                                            <i class="fa-solid fa-heart"></i>
+                                            <i class="fa-solid fa-repeat"></i>
+                                            <i class="fa-solid fa-share-from-square"></i>
+                                            <i class="fa-solid fa-link"></i>
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </div>
+                                        <div class="scw-song-name">Tự Tình - Quang Huy (Minh Triều st.)</div>
+                                        <div class="scw-playrate">
+                                            <i class="fa-solid fa-play"></i>
+                                            940K
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="feed-sidebar">
+                    <div class="sidebar-block recommend-artist">
+                        <div class="title">
+                            <div class="left">
+                                <i class="fa-solid fa-user-group"></i>
+                                Artists you should follow
+                            </div>
+                            <div class="refresh">
+                                <div class="title-function">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                    Refresh list
+                                </div>
+                            </div>
+                        </div>
+                        <div id="famous-artist">
+                        </div>
+                    </div>
+                    <div class="sidebar-block favorite-song">
+                        <div class="title">
+                            <div class="left">
+                                <i class="fa-solid fa-heart"></i>
+                                138 likes
+                            </div>
+                            <div class="title-function">View all</div>
+                        </div>
+                        <div id="liked-song">
+                        </div>
+                    </div>
+                    <div class="sidebar-block listening-history">
+                        <div class="title">
+                            <div class="left">
+                                <i class="fa-solid fa-calendar-day"></i>
+                                Listening history
+                            </div>
+                            <div class="title-function">View all</div>
+                        </div>
+                        <div id="song-in-history"></div>
+                    </div>
+                    <div class="end-page-info">
+                        <span class="info">
+                            <p>Legal</p>-
+                            <p>Privacy</p> -
+                            <p>Cookie Policy</p> -
+                            <p>Consent Manager</p> -
+                            <p>Imprint</p> -
+                            <p>Artist Resources</p> -
+                            <p>Blog</p> -
+                            <p>Charts</p> -
+                        </span>
+                        <div class="language">
+                            <span>Language: </span>English(US)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="./main.js"></script>
+    <script src="./song-info.js"></script>
+</body>
+
+</html>
